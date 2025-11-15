@@ -34,32 +34,38 @@ export function AboutView({ onBack }: AboutViewProps) {
         {/* Main Card */}
         <Card>
           <CardHeader>
-            <CardTitle>About This Project</CardTitle>
+            <CardTitle>Whats this?</CardTitle>
             <CardDescription>
-              Real-time stock tracking for the web
+              A web-based stock tracker I made for fun. Track stocks with real-time data, 
+              interactive charts, and AI-powered insights.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <h3 className="font-semibold mb-2">What is Stonks?</h3>
+              <h3 className="font-semibold mb-2">What is a "Stonk"?</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                A web-based stock tracker I made for fun. Track stocks with real-time data, 
-                interactive charts, and AI-powered insights.
+                Its a meme reference to stocks from the Wallstreetbets subreddit fiasco.
               </p>
             </div>
 
             <div>
               <h3 className="font-semibold mb-2">Features</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Real-time stock quotes and charts. Search thousands of stocks instantly. AI analysis 
-                and recommendations. Dark mode support. Cached data for fast loading. Mobile responsive.
+                You can track stocks, see their price, and see how they're doing. Also the UI is kinda nice I used shadcn/ui for it.
               </p>
             </div>
 
             <div>
               <h3 className="font-semibold mb-2">Tech Stack</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                React, TypeScript, Vite, Tailwind CSS, shadcn/ui, Motion, and Stockly API.
+                React, shadcn/ui and the Stockly API that I built for the android app but I reused it here. The API uses the yfinance SDK to get the stock data and OpenAI for the AI insights stuff.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold mb-2">Why?</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Why the heck not?
               </p>
             </div>
 
