@@ -1,6 +1,6 @@
 import { cache } from './cache';
 
-const API_BASE_URL = import.meta.env.DEV ? '/api' : 'https://stockly-api.vercel.app';
+const API_BASE_URL = '/api';
 
 export interface Stock {
   symbol: string;
