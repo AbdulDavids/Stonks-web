@@ -37,19 +37,19 @@ export function StockList({ onSelectStock, selectedSymbol, onNavigateToDetails }
 
   useEffect(() => {
     // Try to load from cache first
-    const cachedTrending = cache.get<Stock[]>('trending_20');
-    const cachedGainers = cache.get<Stock[]>('gainers_20');
-    const cachedLosers = cache.get<Stock[]>('losers_20');
-    
+    const cachedTrending = cache.get<Stock[]>('trending_50');
+    const cachedGainers = cache.get<Stock[]>('gainers_50');
+    const cachedLosers = cache.get<Stock[]>('losers_50');
+
     if (cachedTrending) setTrending(cachedTrending);
     if (cachedGainers) setGainers(cachedGainers);
     if (cachedLosers) setLosers(cachedLosers);
-    
+
     // If we have all cached data, don't show loading
     if (cachedTrending && cachedGainers && cachedLosers) {
       setLoading(false);
     }
-    
+
     // Load fresh data in background
     loadStocks();
   }, []);
@@ -58,9 +58,9 @@ export function StockList({ onSelectStock, selectedSymbol, onNavigateToDetails }
     try {
       setLoading(true);
       const [trendingData, gainersData, losersData] = await Promise.all([
-        getTrendingStocks(20),
-        getGainers(20),
-        getLosers(20),
+        getTrendingStocks(50),
+        getGainers(50),
+        getLosers(50),
       ]);
       setTrending(trendingData);
       setGainers(gainersData);
@@ -76,14 +76,14 @@ export function StockList({ onSelectStock, selectedSymbol, onNavigateToDetails }
     try {
       setRefreshing(true);
       // Clear cache for fresh data
-      cache.delete('trending_20');
-      cache.delete('gainers_20');
-      cache.delete('losers_20');
-      
+      cache.delete('trending_50');
+      cache.delete('gainers_50');
+      cache.delete('losers_50');
+
       const [trendingData, gainersData, losersData] = await Promise.all([
-        getTrendingStocks(20),
-        getGainers(20),
-        getLosers(20),
+        getTrendingStocks(50),
+        getGainers(50),
+        getLosers(50),
       ]);
       setTrending(trendingData);
       setGainers(gainersData);

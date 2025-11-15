@@ -8,9 +8,9 @@ interface WelcomeScreenProps {
 
 export function WelcomeScreen({ onClose }: WelcomeScreenProps) {
   return (
-    <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-center justify-center p-4">
-      <Card className="max-w-2xl w-full">
-        <CardHeader className="text-center space-y-4 pt-8">
+    <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+      <Card className="max-w-2xl w-full my-auto">
+        <CardHeader className="text-center space-y-4 pt-6 md:pt-8">
           <div className="flex justify-center">
             <img src="/android-chrome-192x192.png" alt="Stonks Logo" className="h-16 w-16" />
           </div>
@@ -20,7 +20,7 @@ export function WelcomeScreen({ onClose }: WelcomeScreenProps) {
           </CardDescription>
         </CardHeader>
         
-        <CardContent className="space-y-6 pb-8">
+        <CardContent className="space-y-6 pb-6 md:pb-8">
           <div className="space-y-4">
             <div className="flex gap-3">
               <div className="h-10 w-10 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">

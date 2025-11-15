@@ -352,8 +352,18 @@ export function StockDetails({ symbol }: StockDetailsProps) {
               <CardDescription>Volume</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">
-                <NumberTicker value={details.regularMarketVolume ?? 0} />
+              <div className="text-2xl md:text-2xl text-xl font-bold break-all">
+                {details.regularMarketVolume ? (
+                  details.regularMarketVolume >= 1e9 ? (
+                    <>{(details.regularMarketVolume / 1e9).toFixed(2).replace(/\.?0+$/, '')}B</>
+                  ) : details.regularMarketVolume >= 1e6 ? (
+                    <>{(details.regularMarketVolume / 1e6).toFixed(2).replace(/\.?0+$/, '')}M</>
+                  ) : details.regularMarketVolume >= 1e3 ? (
+                    <>{(details.regularMarketVolume / 1e3).toFixed(2).replace(/\.?0+$/, '')}K</>
+                  ) : (
+                    <NumberTicker value={details.regularMarketVolume} />
+                  )
+                ) : 'N/A'}
               </div>
             </CardContent>
           </Card>
