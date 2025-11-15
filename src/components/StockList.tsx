@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Input } from '@/components/ui/input';
 import { Search, TrendingUp, TrendingDown, RefreshCw } from 'lucide-react';
 import { ThemeSwitcher } from './theme-switcher';
-import { NumberTicker } from './ui/number-ticker';
 import { Button } from '@/components/ui/button';
 import { Ticker, TickerIcon, TickerSymbol, TickerPrice, TickerPriceChange } from '@/components/ui/shadcn-io/ticker';
 import {
@@ -14,8 +12,6 @@ import {
   getGainers,
   getLosers,
   searchStocks,
-  formatCurrency,
-  formatPercent,
   type Stock,
 } from '@/lib/api';
 import { cache } from '@/lib/cache';

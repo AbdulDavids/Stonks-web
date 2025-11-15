@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
-import { searchStocks, formatCurrency, formatPercent, type Stock } from '@/lib/api';
+import { searchStocks, type Stock } from '@/lib/api';
 import { ThemeSwitcher } from './theme-switcher';
 import { NumberTicker } from './ui/number-ticker';
 
